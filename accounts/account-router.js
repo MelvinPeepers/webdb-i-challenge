@@ -17,6 +17,7 @@ router.get("/", (req, res) => {
       res.status(500).json({ message: "Failed to get accounts" });
     });
 });
+// tested in Postman
 
 router.get("/:id", (req, res) => {
   // SELECT * FROM Posts WHERE ID = param.id
@@ -36,7 +37,8 @@ router.get("/:id", (req, res) => {
       res.status(500).json({ message: "Failed to get account" });
     });
 });
-// postman http://localhost:4000/api/posts/2
+// postman http://localhost:5000/api/accounts/3
+// tested in Postman
 
 router.post("/", (req, res) => {
   // INSERT INTO Posts (all of the keys from req.body) VALUES (all of the values from req.body)
@@ -51,6 +53,7 @@ router.post("/", (req, res) => {
       res.status(500).json({ message: "Failed to insert account" });
     });
 });
+// tested in Postman
 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
@@ -70,6 +73,8 @@ router.put("/:id", (req, res) => {
       res.status(500).json({ message: "Failed to update account" });
     });
 });
+// http://localhost:5000/api/accounts/3
+// tested in Postman
 
 router.delete("/:id", (req, res) => {
   // DELETE FROM Posts WHERE id = id;
@@ -89,5 +94,6 @@ router.delete("/:id", (req, res) => {
       res.status(500).json({ message: "Failed to delete account" });
     });
 });
+// tested in Postman
 
 module.exports = router;
